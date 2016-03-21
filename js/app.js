@@ -34,7 +34,6 @@ $(document).ready(function() {
 	})
 	.keyup(function(event) {
 		if (event.keyCode == 88) {
-			//stop music//
 			$('.ryu-cool').hide();
 			$('.ryu-still').show();
 		}
