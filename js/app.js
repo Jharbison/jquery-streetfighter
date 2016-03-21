@@ -22,11 +22,32 @@ $(document).ready(function() {
 	.mouseup(function() {
 		$('.ryu-throwing').hide();
 		$('.ryu-ready').show();
-	});
+	})
 });
+
+	$(document).keydown(function(event) {
+		if (event.which == 88) {
+			playTheme();
+		$('.ryu-still, .ryu-ready').hide();
+		$('.ryu-cool').show();
+	}
+	})
+	.keyup(function(event) {
+		if (event.which == 88) {
+			$('#theme')[0].pause();
+      		$('#theme')[0].load();
+			$('.ryu-cool').hide();
+			$('.ryu-still').show();
+		}
+	});
 
 function playHadouken () {
 	$('#hadouken-sound')[0].volume = 0.5;
 	$('#hadouken-sound')[0].load();
 	$('#hadouken-sound')[0].play();
+}
+function playTheme () {
+	$('#theme')[0].volume = 0.3;
+	$('#theme')[0].load();
+	$('#theme')[0].play();
 }
