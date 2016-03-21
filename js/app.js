@@ -26,16 +26,15 @@ $(document).ready(function() {
 });
 
 	$(document).keydown(function(event) {
-		if (event.which == 88) {
+		if (event.keyCode == 88) {
 			playTheme();
 		$('.ryu-still, .ryu-ready').hide();
 		$('.ryu-cool').show();
 	}
 	})
 	.keyup(function(event) {
-		if (event.which == 88) {
-			$('#theme')[0].pause();
-      		$('#theme')[0].load();
+		if (event.keyCode == 88) {
+			//stop music//
 			$('.ryu-cool').hide();
 			$('.ryu-still').show();
 		}
